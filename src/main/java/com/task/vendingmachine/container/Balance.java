@@ -22,7 +22,7 @@ public class Balance {
 	}
 	
 	public void pay(int amount) {
-		
+		this.balance -= amount;
 	}
 	
 	public int getBalance() {
