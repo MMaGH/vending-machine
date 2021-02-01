@@ -4,16 +4,17 @@ import com.task.vendingmachine.model.Coin;
 import java.util.*;
 
 public class Balance {
-	private List<Coin> coins = new ArrayList<>();
 	private int balance;
 	
 
 	public void addCoin(Coin coin) {
-		this.coins.add(coin);
+		this.balance += coin.getValue();
 	}
 	
 	public void addCointList(List<Coin> coinList) {
-		this.coins.addAll(coinList);
+		for(Coin coin : coinList) {
+			this.balance += coin.getValue();
+		}
 	}
 	
 	public List<Coin> getChange() {
