@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Balance {
 	private List<Coin> coins = new ArrayList<>();
-	private int value;
+	private int balance;
 	
 
 	public void addCoin(Coin coin) {
@@ -22,5 +22,9 @@ public class Balance {
 	
 	public void pay(int amount) {
 		
+	}
+	
+	public int getBalance() {
+		return this.balance;
 	}
 }
