@@ -40,7 +40,6 @@ public class BalanceTest {
 		balance.addCoin(Coin.QUARTER);
 		balance.addCoin(Coin.QUARTER);
 		balance.addCoin(Coin.NICKEL);
-		
 		balance.pay(35);
 		
 		List<Coin> expectedCoins = Arrays.asList(Coin.NICKEL, Coin.NICKEL);
