@@ -1,4 +1,4 @@
-package com.task.vendingmachine.Coin;
+package com.task.vendingmachine.model;
 
 public enum Coin {
 	PENNY(1),
