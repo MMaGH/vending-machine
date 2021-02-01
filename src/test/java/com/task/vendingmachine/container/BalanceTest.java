@@ -37,12 +37,19 @@ public class BalanceTest {
 	void getChangeReturnsRemainderChange() {
 		Balance balance = new Balance();
 		
-		balance.addCoin(Coin.QUARTER);
-		balance.addCoin(Coin.QUARTER);
-		balance.addCoin(Coin.NICKEL);
+		balance.addCointList(Arrays.asList(Coin.QUARTER, Coin.QUARTER, Coin.NICKEL));
 		balance.pay(35);
 		
-		List<Coin> expectedCoins = Arrays.asList(Coin.NICKEL, Coin.NICKEL);
+		List<Coin> expectedCoins = Arrays.asList(Coin.DIME, Coin.DIME);
+		
+		assertEquals(expectedCoins, balance.getChange());
+		
+		balance.addCointList(Arrays.asList(Coin.QUARTER, Coin.QUARTER, Coin.QUARTER,
+												Coin.DIME, Coin.PENNY, Coin.PENNY));
+		
+		balance.pay(45);
+		
+		expectedCoins = Arrays.asList(Coin.QUARTER, Coin.DIME, Coin.NICKEL, Coin.PENNY, Coin.PENNY);
 		
 		assertEquals(expectedCoins, balance.getChange());
 	}
