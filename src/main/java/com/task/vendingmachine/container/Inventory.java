@@ -1,14 +1,23 @@
 package com.task.vendingmachine.container;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.task.vendingmachine.model.Beverage;
 
 public class Inventory {
+	private Map<Beverage, Integer> stock;
+	private Map<Beverage, Integer> consumption;
+	
+	public Inventory() {
+		this.stock = new HashMap<Beverage, Integer>();
+		this.consumption = new HashMap<Beverage, Integer>();
+	}
+	
 	
 	public Map<Beverage, Integer> getConsumption() {
-		return null;
+		return consumption;
 	}
 	
 	public Beverage getBeverage(String name) {
@@ -32,6 +41,7 @@ public class Inventory {
 	}
 	
 	public boolean buyBeverage(Beverage beverage) {
+		
 		return false;
 	}
 	
