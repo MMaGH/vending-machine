@@ -54,4 +54,13 @@ public class BalanceTest {
 		assertEquals(expectedCoins, balance.getChange());
 	}
 	
+	@Test
+	void insufficentFundsCancelsPayment() {
+		Balance balance = new Balance();
+		balance.addCoin(Coin.QUARTER);
+		
+		assertFalse(balance.pay(30));
+		assertTrue(balance.pay(25));
+	}
+	
 }
