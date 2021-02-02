@@ -15,6 +15,10 @@ public class Inventory {
 		return null;
 	}
 	
+	public boolean buyBeverage(Beverage beverage) {
+		return false;
+	}
+	
 	public void resetInventory() {
 		
 	}
