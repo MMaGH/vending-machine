@@ -11,8 +11,7 @@ public class Inventory {
 	private Map<Beverage, Integer> consumption;
 	
 	public Inventory() {
-		this.stock = new HashMap<Beverage, Integer>();
-		this.consumption = new HashMap<Beverage, Integer>();
+		resetInventory();
 	}
 	
 	
@@ -46,7 +45,13 @@ public class Inventory {
 	}
 	
 	public void resetInventory() {
+		this.stock = new HashMap<Beverage, Integer>();
 		
+		stock.put(Beverage.Coke, 100);
+		stock.put(Beverage.Pepsi, 100);
+		stock.put(Beverage.Soda, 100);
+		
+		this.consumption = new HashMap<Beverage, Integer>();
 	}
 	
 }
