@@ -38,8 +38,13 @@ public class VendingMachine {
 		this.beverage = inventory.getBeverage(name);
 	}
 	
-	public void confirmPurchase() {
-		
+	public boolean confirmPurchase() {
+		boolean success = balance.pay(beverage.getPrice());
+		if (success) {
+			inventory.buyBeverage(beverage);
+			beverage = null;
+		}
+		return success;
 	}
 	
 	public int getBalance() {
@@ -51,7 +56,8 @@ public class VendingMachine {
 	}
 	
 	public List<Coin> cancelPurchase() {
-		return null;
+		this.beverage = null;
+		return balance.getChange();
 	}
 	
 	public void reset() {
