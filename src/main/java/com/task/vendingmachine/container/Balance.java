@@ -52,4 +52,8 @@ public class Balance {
 		
 		return coins;
 	}
+	
+	public void reset() {
+		this.balance = 0;
+	}
 }
