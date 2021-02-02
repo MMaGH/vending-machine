@@ -5,4 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class VendingMachineTest {
 
+	@Test
+	void addFundsIncreasesBalance() {
+		VendingMachine vendingMachine = new VendingMachine();
+		
+	}
+	
 }
