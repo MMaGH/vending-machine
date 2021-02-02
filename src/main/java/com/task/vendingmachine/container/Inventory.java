@@ -40,8 +40,14 @@ public class Inventory {
 	}
 	
 	public boolean buyBeverage(Beverage beverage) {
-		
-		return false;
+		boolean success = false;
+		int beverageCount = stock.get(beverage);
+		if (beverageCount > 0) {
+			stock.replace(beverage, beverageCount - 1);
+			consumption.replace(beverage, consumption.get(beverage) + 1);
+			success = true;
+		}
+		return success;
 	}
 	
 	public void resetInventory() {
@@ -52,6 +58,11 @@ public class Inventory {
 		stock.put(Beverage.Soda, 100);
 		
 		this.consumption = new HashMap<Beverage, Integer>();
+		
+		consumption.put(Beverage.Coke, 0);
+		consumption.put(Beverage.Pepsi, 0);
+		consumption.put(Beverage.Soda, 0);
 	}
-	
+
+
 }
