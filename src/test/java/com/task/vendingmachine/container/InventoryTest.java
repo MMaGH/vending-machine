@@ -33,6 +33,7 @@ public class InventoryTest {
 		Map<Beverage, Integer> expectedMap = new HashMap<Beverage, Integer>();
 		expectedMap.put(Beverage.Coke, 2);
 		expectedMap.put(Beverage.Pepsi, 1);
+		expectedMap.put(Beverage.Soda, 0);
 		
 		assertEquals(expectedMap, inventory.getConsumption());
 	}
@@ -46,6 +47,10 @@ public class InventoryTest {
 		inventory.buyBeverage(Beverage.Pepsi);
 		
 		Map<Beverage, Integer> expectedMap = new HashMap<Beverage, Integer>();
+		
+		expectedMap.put(Beverage.Coke, 0);
+		expectedMap.put(Beverage.Pepsi, 0);
+		expectedMap.put(Beverage.Soda, 0);
 
 		inventory.resetInventory();
 		
