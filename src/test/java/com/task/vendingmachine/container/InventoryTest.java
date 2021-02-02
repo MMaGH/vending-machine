@@ -15,9 +15,9 @@ public class InventoryTest {
 	void getBeverageReturnsCorrectBeverage() {
 		Inventory inventory = new Inventory();
 		
-		assertEquals(Beverage.Coke, inventory.getBeverage("Coke"));
-		assertEquals(Beverage.Soda, inventory.getBeverage("Soda"));
-		assertEquals(Beverage.Pepsi, inventory.getBeverage("Pepsi"));
+		assertEquals(Beverage.COKE, inventory.getBeverage("Coke"));
+		assertEquals(Beverage.SODA, inventory.getBeverage("Soda"));
+		assertEquals(Beverage.PEPSI, inventory.getBeverage("Pepsi"));
 		
 	}
 	
@@ -26,14 +26,14 @@ public class InventoryTest {
 	void consumptionIsTracked() {
 		Inventory inventory = new Inventory();
 		
-		inventory.buyBeverage(Beverage.Coke);
-		inventory.buyBeverage(Beverage.Coke);
-		inventory.buyBeverage(Beverage.Pepsi);
+		inventory.buyBeverage(Beverage.COKE);
+		inventory.buyBeverage(Beverage.COKE);
+		inventory.buyBeverage(Beverage.PEPSI);
 		
 		Map<Beverage, Integer> expectedMap = new HashMap<Beverage, Integer>();
-		expectedMap.put(Beverage.Coke, 2);
-		expectedMap.put(Beverage.Pepsi, 1);
-		expectedMap.put(Beverage.Soda, 0);
+		expectedMap.put(Beverage.COKE, 2);
+		expectedMap.put(Beverage.PEPSI, 1);
+		expectedMap.put(Beverage.SODA, 0);
 		
 		assertEquals(expectedMap, inventory.getConsumption());
 	}
@@ -42,15 +42,15 @@ public class InventoryTest {
 	void resetInventoryClearsConsumption( ) {
 		Inventory inventory = new Inventory();
 		
-		inventory.buyBeverage(Beverage.Coke);
-		inventory.buyBeverage(Beverage.Coke);
-		inventory.buyBeverage(Beverage.Pepsi);
+		inventory.buyBeverage(Beverage.COKE);
+		inventory.buyBeverage(Beverage.COKE);
+		inventory.buyBeverage(Beverage.PEPSI);
 		
 		Map<Beverage, Integer> expectedMap = new HashMap<Beverage, Integer>();
 		
-		expectedMap.put(Beverage.Coke, 0);
-		expectedMap.put(Beverage.Pepsi, 0);
-		expectedMap.put(Beverage.Soda, 0);
+		expectedMap.put(Beverage.COKE, 0);
+		expectedMap.put(Beverage.PEPSI, 0);
+		expectedMap.put(Beverage.SODA, 0);
 
 		inventory.resetInventory();
 		
