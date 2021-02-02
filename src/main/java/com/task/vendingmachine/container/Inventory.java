@@ -20,8 +20,10 @@ public class Inventory {
 			break;
 		case "coke":
 			beverage = Beverage.Coke;
+			break;
 		case "soda":
 			beverage = Beverage.Soda;
+			break;
 		default:
 			break;
 		}
