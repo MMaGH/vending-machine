@@ -26,8 +26,15 @@ public class Balance {
 		return change;
 	}
 	
-	public void pay(int amount) {
+	public boolean pay(int amount) {
+		boolean success = false;
 		this.balance -= amount;
+		if (this.balance >= 0 ) {
+			success = true;
+		} else {
+			this.balance += amount;
+		}
+		return success;
 	}
 	
 	public int getBalance() {
