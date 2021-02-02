@@ -24,13 +24,13 @@ public class Inventory {
 		
 		switch (name.toLowerCase()) {
 		case "pepsi":
-			beverage = Beverage.Pepsi;
+			beverage = Beverage.PEPSI;
 			break;
 		case "coke":
-			beverage = Beverage.Coke;
+			beverage = Beverage.COKE;
 			break;
 		case "soda":
-			beverage = Beverage.Soda;
+			beverage = Beverage.SODA;
 			break;
 		default:
 			break;
@@ -53,15 +53,15 @@ public class Inventory {
 	public void resetInventory() {
 		this.stock = new HashMap<Beverage, Integer>();
 		
-		stock.put(Beverage.Coke, 100);
-		stock.put(Beverage.Pepsi, 100);
-		stock.put(Beverage.Soda, 100);
+		stock.put(Beverage.COKE, 100);
+		stock.put(Beverage.PEPSI, 100);
+		stock.put(Beverage.SODA, 100);
 		
 		this.consumption = new HashMap<Beverage, Integer>();
 		
-		consumption.put(Beverage.Coke, 0);
-		consumption.put(Beverage.Pepsi, 0);
-		consumption.put(Beverage.Soda, 0);
+		consumption.put(Beverage.COKE, 0);
+		consumption.put(Beverage.PEPSI, 0);
+		consumption.put(Beverage.SODA, 0);
 	}
 
 
