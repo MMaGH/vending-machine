@@ -25,11 +25,11 @@ public class VendingMachine {
 	
 	
 	public void addFund(Coin coin) {
-		
+		balance.addCoin(coin);
 	}
 	
 	public void addFund(List<Coin> coins) {
-		
+		balance.addCointList(coins);
 	}
 	
 	public void selectBeverage(String name) {
@@ -41,11 +41,11 @@ public class VendingMachine {
 	}
 	
 	public int getBalance() {
-		return 0;
+		return balance.getBalance();
 	}
 	
 	public List<Coin> getChange() {
-		return null;
+		return balance.getChange();
 	}
 	
 	public List<Coin> cancelPurchase() {
