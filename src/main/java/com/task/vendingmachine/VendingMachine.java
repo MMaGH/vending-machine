@@ -12,6 +12,8 @@ public class VendingMachine {
 	private Balance balance;
 	private Inventory inventory;
 	
+	private Beverage beverage;
+	
 	public VendingMachine() {
 		this.balance = new Balance();
 		this.inventory = new Inventory();
@@ -33,7 +35,7 @@ public class VendingMachine {
 	}
 	
 	public void selectBeverage(String name) {
-		
+		this.beverage = inventory.getBeverage(name);
 	}
 	
 	public void confirmPurchase() {
