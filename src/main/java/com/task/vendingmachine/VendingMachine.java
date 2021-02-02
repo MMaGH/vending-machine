@@ -55,11 +55,12 @@ public class VendingMachine {
 	}
 	
 	public void reset() {
-		
+		inventory.resetInventory();
+		balance.reset();
 	}
 	
 	public Map<Beverage, Integer> getConsumption() {
-		return null;
+		return inventory.getConsumption();
 	}
 	
 	public void setBalance(Balance balance) {
