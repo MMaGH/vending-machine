@@ -12,7 +12,21 @@ public class Inventory {
 	}
 	
 	public Beverage getBeverage(String name) {
-		return null;
+		Beverage beverage = null;
+		
+		switch (name.toLowerCase()) {
+		case "pepsi":
+			beverage = Beverage.Pepsi;
+			break;
+		case "coke":
+			beverage = Beverage.Coke;
+		case "soda":
+			beverage = Beverage.Soda;
+		default:
+			break;
+		}
+		
+		return beverage;
 	}
 	
 	public boolean buyBeverage(Beverage beverage) {
