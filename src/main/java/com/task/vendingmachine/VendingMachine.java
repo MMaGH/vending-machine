@@ -25,6 +25,10 @@ public class VendingMachine {
 		
 	}
 	
+	public int getBalance() {
+		return null;
+	}
+	
 	public List<Coin> getChange() {
 		return null;
 	}
