@@ -1,6 +1,9 @@
 package com.task.vendingmachine;
 
+import java.util.List;
 import java.util.Scanner;
+
+import com.task.vendingmachine.model.Coin;
 
 public class IOHandler {
 	Scanner scanner;
@@ -30,4 +33,11 @@ public class IOHandler {
 		System.out.println(message);
 	}
 	
+	public void printCoinList(List<Coin> coins) {
+		StringBuilder builder = new StringBuilder();
+		for (Coin coin : coins) {
+			builder.append(coin + ", ");
+		}
+		print(builder.toString());
+	}
 }
