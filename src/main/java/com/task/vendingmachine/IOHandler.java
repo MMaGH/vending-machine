@@ -11,8 +11,18 @@ public class IOHandler {
 	}
 	
 	
-	public int getNumberInput() {
-		return 0;
+	public int getNumberInputInRange(int low, int high) {
+		int inputInt = -1;
+		String input;
+		while(!(low <= inputInt && inputInt <= high)) {
+			input = scanner.nextLine();
+			try {
+				inputInt = Integer.parseInt(input);
+			} catch (NumberFormatException e) {
+				print("Enter a number");
+			}
+		}
+		return inputInt;
 	}
 	
 	
