@@ -1,5 +1,7 @@
 package com.task.vendingmachine;
 
+import java.awt.print.Printable;
+
 import com.task.vendingmachine.model.Coin;
 
 public class App {
@@ -39,6 +41,8 @@ public class App {
 			case 33:
 				vendingMachine.selectBeverage("Soda");
 				break;
+			case 5:
+				isRunning = false;
 			case 4:
 				io.print("Purchase Cancelled, here is your change (" + vendingMachine.getBalance()+"￠):");
 				io.printCoinList(vendingMachine.cancelPurchase());
@@ -47,6 +51,7 @@ public class App {
 				break;
 			}
 		}
+		io.print("Exiting program... \n___________________");
 		
 	}
 	
@@ -62,7 +67,8 @@ public class App {
 						+ "    31 | Coke \n"
 						+ "    32 | Pepsi \n"
 						+ "    33 | Soda \n"
-						+ "4  | Cancel Order \n";
+						+ "4  | Cancel Order \n"
+						+ "5  | Exit \n";
 		
 		io.print(options);
 		
